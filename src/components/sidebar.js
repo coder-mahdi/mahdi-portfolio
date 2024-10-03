@@ -4,8 +4,7 @@ function Sidebar() {
   const [socialLinks, setSocialLinks] = useState([]);
 
   useEffect(() => {
-
-    fetch('/Data/sidebarData.json')
+    fetch('/data/sidebarData.json')
       .then(response => response.json())
       .then(data => setSocialLinks(data.socialLinks))
       .catch(error => console.error('Error loading sidebar data:', error));
@@ -17,7 +16,11 @@ function Sidebar() {
         {socialLinks.map((link, index) => (
           <li key={index}>
             <a href={link.url} target="_blank" rel="noopener noreferrer">
-              <img src={process.env.PUBLIC_URL + `/icons/${link.icon}`} alt={link.platform} />
+              {/* استفاده از dangerouslySetInnerHTML برای قرار دادن کد SVG به صورت مستقیم */}
+              <div
+                dangerouslySetInnerHTML={{ __html: link.icon }}
+                style={{ width: "30px", height: "30px" }}
+              />
             </a>
           </li>
         ))}
