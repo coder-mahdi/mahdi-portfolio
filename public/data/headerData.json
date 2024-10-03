@@ -1,5 +1,5 @@
 {
-    "title": "Welcome to My Portfolio",
+  "logo": "images/logo.png",
     "navLinks": [
       { "name": "Projects", "link": "#projects" },
       { "name": "About", "link": "#about" },
