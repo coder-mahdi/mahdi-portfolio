@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header'; 
 import Sidebar from './components/sidebar';
 import Footer from './components/Footer';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Sidebar/>
       <Footer/>
+      <Home/>
     </div>
   );
 }
